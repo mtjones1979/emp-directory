@@ -12,7 +12,7 @@ class App extends React.Component {
     results: [],
     search: ""
   }
-  
+ 
   componentDidMount(){
    API.search()
       .then((res) => this.setState({ results: res.data.results }))
@@ -31,36 +31,46 @@ class App extends React.Component {
     event.preventDefault();
     const newResult = this.state.results.filter(
       (result) =>
-        result.name.first === this.state.search
+        result.name.first.toLowerCase() === this.state.search.toLowerCase() ||
+        result.name.last.toLowerCase() === this.state.search.toLowerCase()
     );
     if (this.state.search !== "") {
       this.setState({ results: newResult, search: ""});
     }
   };
 
-  // sortEmp = (event) => {
-  //   event.prevent.default();
-  // }
+  sortEmpAsc = () => {
+    const sortAsc = this.state.results.sort(function (a,b) {
+      let firstResult = a.name.first;
+      let secondResult = b.name.first;
+
+        if (firstResult < secondResult) {
+          return -1;
+        } 
+        return 0;
+    })
+    this.setState( {results: sortAsc })
+  };
+
   render() {
     return (
-    <div className="container">
+      <div>
+        <Header />
+      
+        <Search 
+          search={this.state.search}
+          handleFormSubmit={this.handleFormSubmit}
+          handleInputChange={this.handleInputChange}
+        />
+      
+        <EmpTable 
+          results={this.state.results}
+          sortEmpAsc={this.sortEmpAsc}
+        />
+      
+        <Footer />
 
-      <Header />
-      
-      <Search 
-      search={this.state.search}
-      handleFormSubmit={this.handleFormSubmit}
-      handleInputChange={this.handleInputChange}
-      />
-      
-      <EmpTable 
-      results={this.state.results}
-      sortEmp={this.sortEmp}
-      />
-      
-      <Footer />
-
-    </div>
+      </div>
     );
   }
 }

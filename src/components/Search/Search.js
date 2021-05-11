@@ -12,9 +12,10 @@ function Search(props) {
             name="search"
             type="text"
             className="form-control"
-            placeholder="Type in Employee First Name"
+            placeholder="Type in Employee First/Last Name or click on First Name in table for alphabetical order"
             id="search"
           />
+          
           <button type="submit" onClick={props.handleFormSubmit} className="btn">
             Search
           </button>
