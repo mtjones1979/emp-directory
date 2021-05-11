@@ -1,5 +1,6 @@
 import React from "react";
 import "./style.css";
+
 // following documentation from randomuser for body lay out
 function EmpTable (props) {
   return (
@@ -8,7 +9,7 @@ function EmpTable (props) {
             <thead className="thead-dark">
                 <tr>
                     <th>Photo</th>
-                    <th className="text-center"><button variant="outline-dark" name="firstName" onClick={props.sortName}>First Name</button></th>
+                    <th className="text-center"><button variant="outline-dark" name="firstName" onClick={props.sortEmp}>First Name</button></th>
                     <th className="text-center" name="lastName">Last Name</th>
                     <th className="text-center" name="email">E-mail</th>
                     <th className="text-center" name="cell">Cell Phone Number</th>
@@ -16,7 +17,7 @@ function EmpTable (props) {
                 </tr>
             </thead>
             <tbody>
-            {/* {props.results.map(result => (
+            {props.results.map(result => (
                 <tr>
                     <td><img alt="employee" src= {result.picture.thumbnail}></img></td>
                     <td className="text-center">{result.name.first}</td>
@@ -25,7 +26,7 @@ function EmpTable (props) {
                     <td className="text-center">{result.cell}</td>
                     <td className="text-center">{result.dob.age}</td>
                 </tr>
-            ))} */}
+            ))}
             </tbody>
         </table>
     </div>

@@ -14,28 +14,33 @@ class App extends React.Component {
   }
   
   componentDidMount(){
-    this.searchEmp();
-  }
-  
-  searchEmp = () => {
-    API.search()
-      .then((res) => )
-  }
+   API.search()
+      .then((res) => this.setState({ results: res.data.results }))
+      .catch((err) => console.log("Something went wrong: ", err))
+  };
+
   handleInputChange = event => {
-    this.setState({ search: event.target.value });
+    const name = event.target.name;
+    const value = event.target.value;
+    this.setState({
+      [name]: value,
+    });
   };
 
   handleFormSubmit = event => {
     event.preventDefault();
-    API.getDogsOfBreed(this.state.search)
-      .then(res => {
-        if (res.data.status === "error") {
-          throw new Error(res.data.message);
-        }
-        this.setState({ results: res.data.message, error: "" });
-      })
-      .catch(err => this.setState({ error: err.message }));
+    const newResult = this.state.results.filter(
+      (result) =>
+        result.name.first === this.state.search
+    );
+    if (this.state.search !== "") {
+      this.setState({ results: newResult, search: ""});
+    }
   };
+
+  // sortEmp = (event) => {
+  //   event.prevent.default();
+  // }
   render() {
     return (
     <div className="container">
@@ -43,13 +48,14 @@ class App extends React.Component {
       <Header />
       
       <Search 
+      search={this.state.search}
       handleFormSubmit={this.handleFormSubmit}
       handleInputChange={this.handleInputChange}
-      breeds={this.state.breeds}
       />
       
       <EmpTable 
       results={this.state.results}
+      sortEmp={this.sortEmp}
       />
       
       <Footer />

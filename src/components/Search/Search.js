@@ -5,17 +5,17 @@ function Search(props) {
     return (
       <form className="search">
         <div className="form-group">
-          <label ><strong>Employee Name: </strong></label>
+          <label htmlFor ="search"><strong>Employee Name: </strong></label>
           <input
             value={props.search}
             onChange={props.handleInputChange}
-            name="name"
+            name="search"
             type="text"
             className="form-control"
             placeholder="Type in Employee First Name"
-            id="name"
+            id="search"
           />
-          <button type="submit" onClick={props.handleFormSubmit} className="btn btn-success">
+          <button type="submit" onClick={props.handleFormSubmit} className="btn">
             Search
           </button>
         </div>
