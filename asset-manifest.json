@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/emp-directory/static/css/main.73cf3da0.chunk.css",
+    "main.js": "/emp-directory/static/js/main.0c556c6a.chunk.js",
+    "main.js.map": "/emp-directory/static/js/main.0c556c6a.chunk.js.map",
+    "runtime-main.js": "/emp-directory/static/js/runtime-main.dfa12aaa.js",
+    "runtime-main.js.map": "/emp-directory/static/js/runtime-main.dfa12aaa.js.map",
+    "static/css/2.800be05e.chunk.css": "/emp-directory/static/css/2.800be05e.chunk.css",
+    "static/js/2.0b2c7339.chunk.js": "/emp-directory/static/js/2.0b2c7339.chunk.js",
+    "static/js/2.0b2c7339.chunk.js.map": "/emp-directory/static/js/2.0b2c7339.chunk.js.map",
+    "index.html": "/emp-directory/index.html",
+    "static/css/2.800be05e.chunk.css.map": "/emp-directory/static/css/2.800be05e.chunk.css.map",
+    "static/css/main.73cf3da0.chunk.css.map": "/emp-directory/static/css/main.73cf3da0.chunk.css.map",
+    "static/js/2.0b2c7339.chunk.js.LICENSE.txt": "/emp-directory/static/js/2.0b2c7339.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.dfa12aaa.js",
+    "static/css/2.800be05e.chunk.css",
+    "static/js/2.0b2c7339.chunk.js",
+    "static/css/main.73cf3da0.chunk.css",
+    "static/js/main.0c556c6a.chunk.js"
+  ]
+}
