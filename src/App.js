@@ -1,9 +1,10 @@
 import React from "react";
-// import Header from "./components/Header";
+import Header from "./components/Header/Header";
 // import Search from "./components/Search";
 // import EmpTable from "./components/EmpTable";
-import Footer from "./components/Footer";
+import Footer from "./components/Footer/Footer";
 // import API from "./utils/API";
+
 
 class App extends React.Component {
 
@@ -17,15 +18,17 @@ class App extends React.Component {
   render() {
     return (
     <div className="container">
-      {/* <Header />
+
+      <Header />
       
-      <Search 
+      {/* <Search 
       />
       
       <EmpTable 
       />
        */}
       <Footer />
+
     </div>
     );
   }
